@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id:  create-table-wallets
+      author:  kirdmt
+      labels: wallets_migration
+      context:
+      comment:
+      changes:
+        - createTable:
+            tableName:  wallets
+            columns:
+              - column:
+                  name:  id
+                  type:  int
+                  autoIncrement:  false
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  amount
+                  type:  int
+                  constraints:
+                    nullable:  true
+  - changeSet:
+      id:  insert-into-wallets
+      author:  kirdmt
+      changes:
+        - insert:
+            tableName:  wallets
+            columns:
+              - column:
+                  name:  id
+                  value:  236234
+              - column:
+                  name:  amount
+                  value:  2336234
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: 23336234
+              - column:
+                  name: amount
+                  value: 234536234
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: 555
+              - column:
+                  name: amount
+                  value: 9910
